@@ -1,0 +1,25 @@
+# Fichier de base de données SQLite
+# Chaque étudiant doit créer sa propre base avec init_db.php
+database.db
+database.db-journal
+database.db-wal
+
+# Fichiers de configuration locaux (créés par les étudiants)
+db.php
+db_mysql.php
+db_sqlite_backup.php
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+error_log
