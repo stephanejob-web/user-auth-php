@@ -26,7 +26,7 @@ session_start();
 // Vérifier que l'utilisateur connecté est administrateur
 if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     // Non autorisé → retour à l'accueil
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
 // INCLURE LA BASE DE DONNÉES
 // ----------------------------------------------------------------------------
 
-require_once 'db.php';
+require_once '../config/db.php';
 
 // ============================================================================
 // VÉRIFIER QU'UN ID A ÉTÉ FOURNI

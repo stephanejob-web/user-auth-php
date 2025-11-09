@@ -43,7 +43,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     // Une des deux conditions est vraie → accès refusé
 
     // Rediriger vers la page d'accueil
-    header('Location: index.php');
+    header('Location: ../index.php');
 
     // Arrêter l'exécution
     exit();
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
 // ----------------------------------------------------------------------------
 
 // Inclure le fichier de connexion PDO
-require_once 'db.php';
+require_once '../config/db.php';
 
 // ----------------------------------------------------------------------------
 // RÉCUPÉRER LA LISTE DE TOUS LES UTILISATEURS
@@ -122,7 +122,7 @@ try {
 // ----------------------------------------------------------------------------
 
 // Maintenant qu'on a récupéré les données, on peut afficher le HTML
-include_once 'header.php';
+include_once '../includes/header.php';
 ?>
 
 <!-- ========================================================================== -->
@@ -426,7 +426,7 @@ include_once 'header.php';
     <!-- LIEN DE RETOUR -->
     <!-- ========================================================================== -->
 
-    <p><a href="index.php">Back to Home</a></p>
+    <p><a href="../index.php">Back to Home</a></p>
 
 </main>
 

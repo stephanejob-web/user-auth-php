@@ -16,13 +16,13 @@
  */
 
 // Inclure le fichier header (navigation + début HTML)
-include_once 'header.php';
+include_once 'includes/header.php';
 
 // Inclure le fichier de connexion à la base de données
 // require_once : inclut le fichier UNE SEULE FOIS
 // Si le fichier a déjà été inclus, PHP l'ignore
 // Différence avec include : require arrête le script si le fichier n'existe pas
-require_once 'db.php';
+require_once 'config/db.php';
 
 // ----------------------------------------------------------------------------
 // INITIALISER LES VARIABLES POUR LES MESSAGES

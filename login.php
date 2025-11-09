@@ -28,7 +28,7 @@
 session_start();
 
 // Inclure le fichier de connexion à la base de données
-require_once 'db.php';
+require_once 'config/db.php';
 
 // ----------------------------------------------------------------------------
 // INITIALISER LES VARIABLES
@@ -227,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // 1. On a fait session_start() nous-mêmes en début de fichier
 // 2. On a pu faire header('Location: ...') sans problème
 // 3. Maintenant qu'on a fini le traitement, on peut afficher le HTML
-include_once 'header.php';
+include_once 'includes/header.php';
 ?>
 
 <!-- ========================================================================== -->
@@ -372,10 +372,10 @@ NOTES PÉDAGOGIQUES - AUTHENTIFICATION ET SESSIONS
 6. ORDRE DU CODE :
    ┌─────────────────────────────────────────┐
    │ 1. session_start()                      │
-   │ 2. require_once 'db.php'                │
+   │ 2. require_once 'config/db.php'                │
    │ 3. Traitement du formulaire             │
    │ 4. Redirection si succès                │
-   │ 5. include 'header.php'                 │
+   │ 5. include 'includes/header.php'                 │
    │ 6. Affichage HTML                       │
    └─────────────────────────────────────────┘
 

@@ -30,8 +30,9 @@
 // ÉTAPE 1 : Définir le chemin de la base de données
 // ----------------------------------------------------------------------------
 
-// __DIR__ : répertoire actuel où se trouve ce script
-$db_path = __DIR__ . '/database.db';
+// __DIR__ : répertoire actuel où se trouve ce script (config/)
+// On remonte d'un niveau (..) puis on va dans database/
+$db_path = dirname(__DIR__) . '/database/database.db';
 
 // ----------------------------------------------------------------------------
 // ÉTAPE 2 : Supprimer l'ancienne base si elle existe (pour réinitialisation)

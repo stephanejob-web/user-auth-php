@@ -30,7 +30,7 @@ session_start();
 // Vérifier que l'utilisateur est connecté ET administrateur
 if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     // Rediriger vers l'accueil si non autorisé
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 }
 
@@ -38,7 +38,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
 // INCLURE LA BASE DE DONNÉES
 // ----------------------------------------------------------------------------
 
-require_once 'db.php';
+require_once '../config/db.php';
 
 // ----------------------------------------------------------------------------
 // INITIALISER LES VARIABLES
@@ -269,7 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // INCLURE LE HEADER
 // ----------------------------------------------------------------------------
 
-include_once 'header.php';
+include_once '../includes/header.php';
 ?>
 
 <!-- ========================================================================== -->
@@ -405,7 +405,7 @@ include_once 'header.php';
 
         <p>
             <a href="admin.php">Back to Admin Dashboard</a> |
-            <a href="index.php">Back to Home</a>
+            <a href="../index.php">Back to Home</a>
         </p>
 
     <?php

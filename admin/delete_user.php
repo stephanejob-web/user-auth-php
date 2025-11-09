@@ -46,7 +46,7 @@ session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     // L'utilisateur n'est pas autorisé
     // Rediriger vers la page d'accueil
-    header('Location: index.php');
+    header('Location: ../index.php');
     // Arrêter l'exécution du script
     exit();
 }
@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
 // ----------------------------------------------------------------------------
 
 // Inclure le fichier de connexion PDO
-require_once 'db.php';
+require_once '../config/db.php';
 
 // ============================================================================
 // PROTECTION 2 : VÉRIFIER QU'UN ID A ÉTÉ FOURNI

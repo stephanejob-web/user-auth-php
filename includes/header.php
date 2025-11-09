@@ -9,8 +9,22 @@
  * 2. Le début du document HTML (<!DOCTYPE>, <html>, <head>)
  * 3. Le menu de navigation qui s'adapte selon l'état de l'utilisateur
  *
- * Il sera inclus au début de chaque page avec include 'header.php';
+ * Il sera inclus au début de chaque page avec include 'includes/header.php';
+ *
+ * IMPORTANT : Définir $base_path AVANT d'inclure ce fichier
+ * - Depuis la racine : $base_path = '';
+ * - Depuis admin/ : $base_path = '../';
  */
+
+// ----------------------------------------------------------------------------
+// VARIABLE DE CHEMIN DE BASE
+// ----------------------------------------------------------------------------
+
+// Si $base_path n'est pas défini, on le détecte automatiquement
+if (!isset($base_path)) {
+    // On vérifie si on est dans un sous-dossier
+    $base_path = (basename(dirname($_SERVER['PHP_SELF'])) !== 'user-auth-php') ? '../' : '';
+}
 
 // ----------------------------------------------------------------------------
 // GESTION DE LA SESSION PHP
@@ -69,7 +83,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <title>User Authentication System</title>
 
     <!-- Lien vers la feuille de style CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo $base_path; ?>assets/css/style.css">
 </head>
 
 <body>
@@ -104,7 +118,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <li>
                     <!-- <li> = List Item (élément de liste) -->
-                    <a href="index.php">Home</a>
+                    <a href="<?php echo $base_path; ?>index.php">Home</a>
                     <!-- <a> = Anchor (lien hypertexte) -->
                     <!-- href = "hypertext reference" = destination du lien -->
                 </li>
@@ -132,12 +146,12 @@ if (session_status() === PHP_SESSION_NONE) {
                     <!-- ================================================== -->
 
                     <li>
-                        <a href="profile.php">Profile</a>
+                        <a href="<?php echo $base_path; ?>profile.php">Profile</a>
                         <!-- Lien vers la page de modification du profil -->
                     </li>
 
                     <li>
-                        <a href="logout.php">Logout</a>
+                        <a href="<?php echo $base_path; ?>logout.php">Logout</a>
                         <!-- Lien pour se déconnecter -->
                     </li>
 
@@ -166,7 +180,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                         <!-- Lien Admin visible UNIQUEMENT pour les administrateurs -->
                         <li>
-                            <a href="admin.php">Admin</a>
+                            <a href="<?php echo $base_path; ?>admin/admin.php">Admin</a>
                             <!-- Ce lien mène au tableau de bord administrateur -->
                         </li>
 
@@ -183,12 +197,12 @@ if (session_status() === PHP_SESSION_NONE) {
                     <!-- ================================================== -->
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="<?php echo $base_path; ?>register.php">Register</a>
                         <!-- Lien vers la page d'inscription -->
                     </li>
 
                     <li>
-                        <a href="login.php">Login</a>
+                        <a href="<?php echo $base_path; ?>login.php">Login</a>
                         <!-- Lien vers la page de connexion -->
                     </li>
 

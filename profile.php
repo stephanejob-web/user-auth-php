@@ -52,7 +52,7 @@ if (!isset($_SESSION['user_id'])) {
 // ----------------------------------------------------------------------------
 
 // Inclure le fichier de connexion PDO
-require_once 'db.php';
+require_once 'config/db.php';
 
 // ----------------------------------------------------------------------------
 // INITIALISER LES VARIABLES
@@ -305,7 +305,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // ----------------------------------------------------------------------------
 
 // Maintenant qu'on a fini le traitement, on peut afficher le HTML
-include_once 'header.php';
+include_once 'includes/header.php';
 ?>
 
 <!-- ========================================================================== -->

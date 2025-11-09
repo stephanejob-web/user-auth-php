@@ -16,7 +16,7 @@
 // - La gestion de session (session_start())
 // - Le début du code HTML (<html>, <head>, <body>)
 // - Le menu de navigation
-include_once 'header.php';
+include_once 'includes/header.php';
 ?>
 
 <!-- ========================================================================== -->
